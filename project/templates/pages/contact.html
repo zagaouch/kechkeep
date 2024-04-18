@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+<div class="card-body">
+<div class="check-tab">
+<div class="checkout-form">
+    <h5>
+        <div  data-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">contact us</div>
+    </h5>
+    <br>
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label>name <span class="required_sign">*</span></label>
+            <input name="name" class="form-control required" placeholder="Enter Your Name" value="" type="text">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Email <span class="required_sign">*</span></label>
+            <input name="email" class="form-control required" placeholder="Enter Your email" value="" type="email">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Phone Number <span class="required_sign">*</span></label>
+            <input name="phone" class="form-control required" placeholder="Enter Your Phone Number" value="" type="text">
+        </div>
+        <div class="form-group col-md-6">
+            <label> message <span class="required_sign">*</span></label>
+            <textarea name="message" class="form-control required" placeholder="type your mail" value="" type="text"></textarea>
+        </div>
+
+    </div>
+    <div class="place-oreder-btn">
+        <button class="btn btn-primary btn-next" type="submit">send</button>
+    </div>
+</form>
+</div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
